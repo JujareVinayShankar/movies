@@ -31,9 +31,8 @@ app.get("/movies/:movieId/", async (request, response) => {
     SELECT
       *
     FROM
-      movie
-    WHERE movie_id = movieId`;
-  const getBookResponse = await db.get(getBooksQuery);
+      movie`;
+  const getBookResponse = await db.all(getBooksQuery);
 
   response.send(movieId);
 });
